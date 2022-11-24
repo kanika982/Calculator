@@ -4,11 +4,11 @@
     {
         static void Main(String[] args)
         {
-            Double num1, num2, Result;
+            double num1, num2, result;
             Console.Write("Enter the first Number:");
-            num1 = Convert.ToDouble(Console.ReadLine());
+            bool num1k = Double.TryParse(Console.ReadLine(),out num1);
             Console.Write("Enter the second Number:");
-            num2 = Convert.ToDouble(Console.ReadLine());
+            bool num2k = Double.TryParse(Console.ReadLine(),out num2);
 
             // Here I am using do-while loop to make choice again
             do
@@ -16,9 +16,9 @@
                 Console.Write("\nYour options are :\n");
                 Console.Write("1-Addition.\n2-Substraction.\n3-Multiplication.\n4-Division.\n5-Exit.\n");
                 Console.Write("\n Enter your choice :");
-                Result = Convert.ToDouble(Console.ReadLine());
+                bool resultk = Double.TryParse(Console.ReadLine(),out result);
 
-                switch (Result)
+                switch (result)
                 {
                     case 1:
                         Console.WriteLine("Addition is:");
@@ -58,7 +58,7 @@
 
             }
 
-            while (Result != 0);
+            while (result != 0);
         }
     }
 }
